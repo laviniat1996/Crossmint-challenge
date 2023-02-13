@@ -1,7 +1,4 @@
 const method = 'POST'; // Replace with DELETE if you want to clear the map
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const method = 'POST'; // Replace with DELETE if you want to clear the map
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
