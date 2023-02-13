@@ -1,6 +1,10 @@
 const method = 'POST'; // Replace with DELETE if you want to clear the map
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const method = 'POST'; // Replace with DELETE if you want to clear the map
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const updateMap = async (row, column) => {
     await fetch('https://challenge.crossmint.io/api/polyanets', {
         method: method,
@@ -11,6 +15,36 @@ const updateMap = async (row, column) => {
         })
     }).then(res => console.log(res));
 }
+
+/* I really tried but didn't find a pattern to automatically fill in Soloons and Comeths. I started the chalenge quite late and didn't expect such a complex map. 
+Also, I had some trouble with the API requests, as the server would crash if there were many requests, which delayed my work a bit. 
+Below are the functions for filling in Soloons and Comeths, which I used on console directly. I use this file https://challenge.crossmint.io/_next/static/chunks/pages/challenge-b4a8e39fe916fe24.js 
+to find the rows and lines needed for them. 
+
+const updateMapSoloons = async (row, column,color) => {
+    await fetch('https://challenge.crossmint.io/api/soloons', {
+        method: POST,
+        body: new URLSearchParams({
+            'candidateId': '775725f4-f758-4bea-864b-1fe78566a4d3',
+            'row': row,
+            'column': column,
+            'color': color
+        })
+    }).then(res => console.log(res));
+}
+
+const updateMapComeths = async (row, column,direction) => {
+    await fetch('https://challenge.crossmint.io/api/comeths', {
+        method: `POST`,
+        body: new URLSearchParams({
+            'candidateId': '775725f4-f758-4bea-864b-1fe78566a4d3',
+            'row': row,
+            'column': column, 
+            'direction': direction
+        })
+    }).then(res => console.log(res));
+}
+*/
 
 const checkDownLeftColumnFirst = async (row, column, iterations) => {
     if (column < 2) return;
