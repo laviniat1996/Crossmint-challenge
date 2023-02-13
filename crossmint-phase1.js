@@ -1,3 +1,4 @@
+//this is the script for the first phase
 const method = 'POST'; // Replace with DELETE if you want to clear the map
 
 const updatePolyanet = async (row, column, method) => {
